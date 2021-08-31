@@ -1,0 +1,54 @@
+
+
+<div class="row" id="test1">
+    <div class="col-sm-8 col-sm-offset-2">
+      <form [formGroup]="addFormMeeting" (submit)="addM()" >
+        <div class="form-group">
+          <label for="nomRecruteur">
+            nomRecruteur
+          </label>
+          <input type="text" id="nomRecruteur" class="form-control"  formControlName="nomRecruteur" [(ngModel)]="meeting.nomRecruteur" >
+        </div>
+        <div class="form-group">
+          <label for="recommandepar">
+            recommandepar
+          </label>
+          <input type="text" id="recommandepar" class="form-control" name="recommandepar" formControlName="recommandepar" [(ngModel)]="meeting.recommandepar">
+        </div>
+        <div class="form-group">
+            <label for="cooptepar">
+                cooptepar
+            </label>
+            <input type="text" id="cooptepar" class="form-control" name="cooptepar"  formControlName="cooptepar" [(ngModel)]="meeting.cooptepar">
+          </div>
+          <div class="form-group">
+            <label for="sourcepar">
+                sourcepar
+            </label>
+            <input type="text" id="sourcepar" class="form-control" name="sourcepar" formControlName="sourcepar" [(ngModel)]="meeting.sourcepar">
+          </div>
+          <div class="form-group">
+            <label for="dateDeLentretien">
+                dateDeLentretien
+            </label>
+            <input type="date" id="dateDeLentretien" class="form-control" name="dateDeLentretien" formControlName="dateDeLentretien"[(ngModel)]="meeting.dateDeLentretien">
+          </div>
+          <div class="form-group">
+            <label for="dateDeMiseAjour">
+                dateDeMiseAjour
+            </label>
+            <input type="date" id="dateDeMiseAjour" class="form-control" name="dateDeMiseAjour" formControlName="dateDeMiseAjour" [(ngModel)]="meeting.dateDeMiseAjour">
+          </div>
+          <div class="form-group">
+            <label for="autrecompetences">
+                autrecompetences
+            </label>
+            <input type="text" id="autrecompetences" class="form-control" name="autrecompetences" formControlName="autrecompetences" [(ngModel)]="meeting.autrecompetences">
+          </div>
+
+
+        <button class="btn btn-primary" type="submit" [disabled]="!addFormMeeting.valid" >Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
