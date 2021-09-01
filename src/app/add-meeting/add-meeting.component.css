@@ -1,3 +1,83 @@
 #test1 {
   margin-top: 150px;
 }
+body{
+  display:flex;
+  height:100vh;
+  justify-content:center;
+  align-items:center;
+  padding:10px;
+  background:linear-gradient(90deg, #2C3E50, #1ABC9C);
+
+}
+.container{
+  max-width: 700px;
+  width:100%;
+  padding:25px 30px;
+  background: #fff;
+  border-radius: 5px;
+
+}
+.container .title{
+  font-size:25px;
+  font-weight: 500;
+}
+.container.title::before{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  height:3px;
+  width:30px;
+  background:linear-gradient(135deg,#71b7e6,#9b59b6);
+}
+.container form .details{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+
+form .details .form-group{
+  margin:20px 0 12px 0 ;
+  width: calc(100% /2 -20px);
+  
+}
+.details .form-group .libelle{
+  display:block;
+ /* font-weight: 500;*/
+  margin-bottom: 5px;
+}
+.details .form-group input{
+  height:30px;
+  width:100%;
+  outline: none;
+  border-radius: 5px;
+  border:1px solid #ccc;
+  padding-left: 15px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+
+}
+
+.details .form-group input:focus,
+  .details .form-group input:valid{
+    border-color:#2C3E50;
+
+  }
+
+ 
+
+  @media(max-width:584px){
+    .container{
+      max-width: 100%;
+    }
+    form .details .form-group{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .container form .details{
+   max-height: 300px;
+   overflow-y:scroll;
+  }
+  
+}

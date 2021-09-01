@@ -11,6 +11,7 @@ import { ListMeetingComponent } from './list-meeting/list-meeting.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FeaturesComponent } from './features/features.component';
+import { UpdateMeetingComponent } from './update-meeting/update-meeting.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FeaturesComponent } from './features/features.component';
     HeaderComponent,
     HomeComponent,
     FeaturesComponent,
+    UpdateMeetingComponent,
 
   ],
   imports: [

@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   {path: 'AddMeeting', component: AddMeetingComponent},
   {path: 'listMeeting', component: ListMeetingComponent},
-  {path: 'features', component: FeaturesComponent},
+ /* {path: 'features', component: FeaturesComponent},*/
   {path: '', component: HomeComponent},
 
 

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import {Meeting} from '../model/Meeting';
 import { MeetingService } from '../Services/meeting.service';
@@ -18,11 +18,12 @@ export class AddMeetingComponent {
   constructor(private meetingService: MeetingService , private router: Router ) { }
 
   addFormMeeting= new  FormGroup({
-    nomRecruteur: new FormControl(''),
+    nomRecruteur: new FormControl('', [Validators.required]),
+    npcandidat: new FormControl('',[Validators.required]),
     recommandepar: new FormControl(''),
     cooptepar: new FormControl(''),
     sourcepar: new FormControl(''),
-    dateDeLentretien: new FormControl(''),
+    dateDeLentretien: new FormControl('',[Validators.required]),
     dateDeMiseAjour: new FormControl(''),
     autrecompetences: new FormControl('')
   });
@@ -32,10 +33,13 @@ export class AddMeetingComponent {
 
   addM(): any {
     console.log(this.addFormMeeting.value);
-    this.meetingService.addM(this.meeting).subscribe(this.meetingService.getAllM().subscribe(res => this.newlist.emit(res)));
+    this.meetingService.addMeetingPreparation(this.meeting).subscribe(this.meetingService.getAllMeetingPreparation().subscribe(res => this.newlist.emit(res)));
     this.router.navigate(['/listMeeting']);
-    this.meetingService.getAllM();
+    this.meetingService.getAllMeetingPreparation();
 
+  }
+  onRetourclick(){
+    this.router.navigate(['/listMeeting']);
   }
   /*
     reset(): void{

@@ -1,4 +1,5 @@
 export class Meeting {
+  id?:number;
   nomRecruteur?: string;
   recommandepar?: string;
   cooptepar?: string;
@@ -6,6 +7,7 @@ export class Meeting {
   dateDeLentretien?: Date;
   dateDeMiseAjour?: Date;
   autrecompetences?: string;
+  npcandidat?:string;
 
 
 }

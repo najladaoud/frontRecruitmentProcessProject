@@ -1,54 +1,93 @@
-
-
-<div class="row" id="test1">
-    <div class="col-sm-8 col-sm-offset-2">
+<body id="test1">
+<div class="container" >
+  <div class="title">Ajout Rendez vous</div>
+    <div class="col-sm-8 col-sm-offset-2">  
       <form [formGroup]="addFormMeeting" (submit)="addM()" >
+
+        <div class="details">
+
         <div class="form-group">
-          <label for="nomRecruteur">
-            nomRecruteur
+          <label class ="libelle" for="nomRecruteur">
+            Nom du Recruteur*
           </label>
           <input type="text" id="nomRecruteur" class="form-control"  formControlName="nomRecruteur" [(ngModel)]="meeting.nomRecruteur" >
+         <div class="alert alert-danger" *ngIf="addFormMeeting.controls['nomRecruteur'].hasError('required') && addFormMeeting.controls['nomRecruteur'].touched">
+            Ce champ est obligatoire
+          </div>
+         <!-- <div class="alert alert-danger" *ngIf="addFormMeeting.controls['nomRecruteur'].hasError('pattern') && addFormMeeting.controls['nomRecruteur'].touched">
+            Le champ nom contient seulement des caractère
+          </div>-->
+
         </div>
+
+       
+        
+      
+       
         <div class="form-group">
-          <label for="recommandepar">
-            recommandepar
+          <label class ="libelle" for="npcandidat">
+            Nom et Prenom du Candidat*
+          </label>
+          <input type="text" id="npcandidat" class="form-control"  formControlName="npcandidat" [(ngModel)]="meeting.npcandidat" >
+          <div class="alert alert-danger" *ngIf="addFormMeeting.controls['npcandidat'].hasError('required') && addFormMeeting.controls['npcandidat'].touched">
+            Ce champ est obligatoire
+          </div>
+        <!--<div class="alert alert-danger" *ngIf="addFormMeeting.controls['npcandidat'].hasError('pattern') && addFormMeeting.controls['npcandidat'].touched">
+            Le champ nom contient seulement des caractère
+          </div>-->
+      
+        
+        </div>
+
+   
+        <div class="form-group">
+          <label  class ="libelle" for="recommandepar">
+            Recommandé par
           </label>
           <input type="text" id="recommandepar" class="form-control" name="recommandepar" formControlName="recommandepar" [(ngModel)]="meeting.recommandepar">
         </div>
         <div class="form-group">
-            <label for="cooptepar">
-                cooptepar
+            <label  class ="libelle" for="cooptepar">
+                Coopté par
             </label>
             <input type="text" id="cooptepar" class="form-control" name="cooptepar"  formControlName="cooptepar" [(ngModel)]="meeting.cooptepar">
           </div>
           <div class="form-group">
-            <label for="sourcepar">
-                sourcepar
+            <label class ="libelle" for="sourcepar">
+                Sourcé par
             </label>
             <input type="text" id="sourcepar" class="form-control" name="sourcepar" formControlName="sourcepar" [(ngModel)]="meeting.sourcepar">
           </div>
           <div class="form-group">
-            <label for="dateDeLentretien">
-                dateDeLentretien
+            <label class ="libelle" for="dateDeLentretien">
+                Date de L'entretien*
             </label>
             <input type="date" id="dateDeLentretien" class="form-control" name="dateDeLentretien" formControlName="dateDeLentretien"[(ngModel)]="meeting.dateDeLentretien">
+          <div class="alert alert-danger" *ngIf="addFormMeeting.controls['dateDeLentretien'].touched && addFormMeeting.controls['dateDeLentretien'].hasError('required')">
+              <div>
+                Ce champ est obligatoire
+              </div>
+         </div>
           </div>
+         
           <div class="form-group">
-            <label for="dateDeMiseAjour">
-                dateDeMiseAjour
+            <label class ="libelle" for="dateDeMiseAjour">
+                Date de mise à jour
             </label>
             <input type="date" id="dateDeMiseAjour" class="form-control" name="dateDeMiseAjour" formControlName="dateDeMiseAjour" [(ngModel)]="meeting.dateDeMiseAjour">
           </div>
           <div class="form-group">
-            <label for="autrecompetences">
-                autrecompetences
+            <label class ="libelle" for="autrecompetences">
+               Compétences
             </label>
             <input type="text" id="autrecompetences" class="form-control" name="autrecompetences" formControlName="autrecompetences" [(ngModel)]="meeting.autrecompetences">
           </div>
 
 
         <button class="btn btn-primary" type="submit" [disabled]="!addFormMeeting.valid" >Enregistrer</button>
+        <button class="btn btn-primary"(click)="onRetourclick()"  >Annuler</button>
+      </div>
       </form>
     </div>
   </div>
-
+</body>

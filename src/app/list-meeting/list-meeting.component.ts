@@ -15,12 +15,16 @@ export class ListMeetingComponent implements OnInit {
   M?: Meeting;
 
   ngOnInit(): void {
-    this.Mservice.getAllM().subscribe((data:Meeting[])=>this.listMeeting=data);
+    this.Mservice.getAllMeetingPreparation().subscribe((data:Meeting[])=>this.listMeeting=data);
     this.M=new Meeting();
 
   }
   onAjouterclick() {
     this.router.navigate(['/AddMeeting']);
+  }
+  onDeleteclick(id:number):void{
+
+this.Mservice.deleteMeetingPreparation(id)
   }
 
 }
