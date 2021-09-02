@@ -8,8 +8,8 @@
           <h2>Manage <b>Entretien</b></h2>
         </div>
         <div class="col-sm-6">
-          <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" (click)="onAjouterclick()" ><i class="material-icons">&#xE147;</i> <span>Add New meeting</span></a>
-          <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"  (click)="onDeleteclick()"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+          <button class="btn btn-success" (click)="onAddMeetingclick()" ><i class="material-icons">&#xE147;</i> <span>Add New meeting</span></button>
+          <button class="btn btn-danger"  ><i class="material-icons">&#xE15C;</i> <span>Delete</span></button>
         </div>
       </div>
     </div>
@@ -22,7 +22,6 @@
         <label for="selectAll"></label>
        </span>
         </th>
-        <th>Id</th>
         <th>Nom et Prénom du candidat</th>
         <th> Date de L'entretien</th>
         <th>Compétences</th>
@@ -37,14 +36,13 @@
         <label for="checkbox1"></label>
        </span>
         </td>
-        <td>{{m.id}}</td>
         <td>{{m.npcandidat}}</td>
         <td>{{m.dateDeLentretien}}</td>
         <td>{{m.autrecompetences}}</td>
         
         <td>
-          <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-          <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+          <button class="edit" ><i class="material-icons"  title="Edit">&#xE254;</i></button>
+          <button class="delete" (click)="OnDeleteMeetingclick(m.id)"><i class="material-icons"  title="Delete"  >&#xE872;</i></button>
         </td>
       </tr>
 
