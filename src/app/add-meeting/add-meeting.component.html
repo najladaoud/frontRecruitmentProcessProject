@@ -1,7 +1,7 @@
 <body id="test1">
 <div class="container" >
   <div class="title">Ajout Rendez vous</div>
-    <div class="col-sm-8 col-sm-offset-2">  
+    <div class="col-sm-8 col-sm-offset-2">
       <form [formGroup]="addFormMeeting" (submit)="addM()" >
 
         <div class="details">
@@ -19,8 +19,8 @@
           </div>-->
 
         </div>
-   
-       
+
+
         <div class="form-group">
           <label class ="libelle" for="npcandidat">
             Nom et Prenom du Candidat*
@@ -32,11 +32,18 @@
         <!--<div class="alert alert-danger" *ngIf="addFormMeeting.controls['npcandidat'].hasError('pattern') && addFormMeeting.controls['npcandidat'].touched">
             Le champ nom contient seulement des caractère
           </div>-->
-      
-        
         </div>
+          <div class="form-group">
+            <label class ="libelle" for="poste">
+              poste*
+            </label>
+            <input type="text" id="poste" class="form-control"  formControlName="poste" [(ngModel)]="meeting.poste" >
+            <div class="alert alert-danger" *ngIf="addFormMeeting.controls['poste'].hasError('required') && addFormMeeting.controls['poste'].touched">
+              Ce champ est obligatoire
+            </div>
+          </div>
 
-   
+
         <div class="form-group">
           <label  class ="libelle" for="recommandepar">
             Recommandé par
@@ -66,23 +73,23 @@
               </div>
          </div>
           </div>
-         
+
           <div class="form-group">
             <label class ="libelle" for="dateDeMiseAjour">
                 Date de mise à jour
             </label>
             <input type="date" id="dateDeMiseAjour" class="form-control" name="dateDeMiseAjour" formControlName="dateDeMiseAjour" [(ngModel)]="meeting.dateDeMiseAjour">
           </div>
-          <div class="form-group">
+
+         <!-- <div class="form-group">
             <label class ="libelle" for="autrecompetences">
-               Compétences
+             Autre Compétences
             </label>
             <input type="text" id="autrecompetences" class="form-control" name="autrecompetences" formControlName="autrecompetences" [(ngModel)]="meeting.autrecompetences">
-          </div>
-
+          </div>-->
 
         <button class="btn btn-primary" type="submit" [disabled]="!addFormMeeting.valid" >Enregistrer</button>
-        <button class="btn btn-primary"(click)="onRetourclick()"  >Annuler</button>
+        <button class="btn btn-danger"(click)="onRetourclick()"  >Annuler</button>
       </div>
       </form>
     </div>

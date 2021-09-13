@@ -1,5 +1,5 @@
 
-<body>
+<div class="body">
 <div class="container " id="test">
   <div class="table-wrapper" >
     <div class="table-title">
@@ -17,15 +17,12 @@
       <thead>
       <tr>
         <th>
-       <span class="custom-checkbox">
-        <input type="checkbox" id="selectAll">
-        <label for="selectAll"></label>
-       </span>
+
         </th>
         <th>Nom et Prénom du candidat</th>
         <th> Date de L'entretien</th>
-        <th>Compétences</th>
-        
+        <th>Poste</th>
+
       </tr>
       </thead>
       <tbody *ngFor="let m of listMeeting; let i= index" >
@@ -37,11 +34,12 @@
        </span>
         </td>
         <td>{{m.npcandidat}}</td>
-        <td>{{m.dateDeLentretien}}</td>
-        <td>{{m.autrecompetences}}</td>
-        
+        <td>{{m.dateDeLentretien | date: "dd/MMM/yyyy "}}</td>
+        <td>{{m.poste}}</td>
+
+
         <td>
-          <button class="edit" ><i class="material-icons"  title="Edit">&#xE254;</i></button>
+          <button class="edit"  [routerLink]="['meeting',m.id]"><i class="material-icons"  title="Edit">&#xE254;</i></button>
           <button class="delete" (click)="OnDeleteMeetingclick(m.id)"><i class="material-icons"  title="Delete"  >&#xE872;</i></button>
         </td>
       </tr>
@@ -49,63 +47,21 @@
       </tbody>
     </table>
     <div class="clearfix">
-      <div class="hint-text">Showing <b>5</b> out of <b>100</b> entries</div>
+
       <ul class="pagination">
-        <li class="page-item disabled"><a href="#">Previous</a></li>
+        <li class="page-item disabled"><a href="#">précédent</a></li>
         <li class="page-item"><a href="#" class="page-link">1</a></li>
         <li class="page-item"><a href="#" class="page-link">2</a></li>
         <li class="page-item active"><a href="#" class="page-link">3</a></li>
         <li class="page-item"><a href="#" class="page-link">4</a></li>
         <li class="page-item"><a href="#" class="page-link">5</a></li>
-        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+        <li class="page-item"><a href="#" class="page-link">suivant</a></li>
       </ul>
     </div>
   </div>
 </div>
 
-  
-</body>
 
-
-
-
-<!--
-<div class="container my-4">
-  <h2 class="text-danger "> Entretien Rendez vous :</h2>
-
-
-  <div class="row text-white my-lg-5">
-    <div class="col-sm-8 col-sm-offset-2">
-      <table class="table table-sm table-bordered table-dark ">
-        <thead class="thead-dark">
-        <tr>
-          <th></th>
-          <th>Nom du Recruteur</th>
-          <th>Recommandé par </th>
-          <th> Coopté par</th>
-          <th> Sourcé par</th>
-          <th> Date de L'entretien</th>
-          <th>Date de mise à jour</th>
-          <th>Autre competences</th>
-
-        </tr>
-        </thead>
-        <tbody  *ngFor="let m of listMeeting; let i= index" >
-        <tr>
-          <td>{{m.nomRecruteur}}</td>
-          <td>{{m.recommandepar}}</td>
-          <td>{{m.cooptepar}}</td>
-          <td>{{m.sourcepar}}</td>
-          <td>{{m.dateDeLentretien}}</td>
-          <td>{{m.dateDeMiseAjour}}</td>
-          <td>{{m.autrecompetences}}</td>
-          <td><button class="btn btn-outline-primary">Modifier</button></td>
-          <td><button class="btn btn-outline-primary">Supprimer</button></td>
-        </tr>
-        </tbody>
-      </table>
-      <button class="btn btn-primary btn-lg btn-block " (click)="onAjouterclick()" >Ajouter Meeting</button>
-    </div>
-  </div>
 </div>
---->
+
+

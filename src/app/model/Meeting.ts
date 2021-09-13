@@ -6,8 +6,9 @@ export class Meeting {
   sourcepar?: string;
   dateDeLentretien?: Date;
   dateDeMiseAjour?: Date;
-  autrecompetences?: string;
+  /*autrecompetences?: string;*/
   npcandidat?:string;
+  poste?:string;
 
 
 }

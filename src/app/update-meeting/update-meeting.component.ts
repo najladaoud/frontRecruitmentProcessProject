@@ -10,13 +10,21 @@ import { MeetingService } from '../Services/meeting.service';
 })
 export class UpdateMeetingComponent implements OnInit {
   @Input() meeting= new Meeting();
-  pid ?: number;
+  pid : string | null ="";
   constructor(private meetingService: MeetingService, private router: Router, private activateR: ActivatedRoute) { }
-  
+
   ngOnInit(): void {
-    
- 
+    this.activateR.paramMap.subscribe(resultat=>{this.pid=resultat.get('id');
+    this.meetingService.getMeetingById(Number(resultat.get('id'))).subscribe(resultat => this.meeting = resultat); });
+
   }
-  
-  
+
+
+  update(){
+    this.meetingService.updateMeetingPreparation(Number(this.pid), this.meeting).subscribe(resultat => this.router.navigateByUrl('/listMeeting'));
+  }
+  onRetourclick(){
+    this.router.navigate(['/listMeeting']);
+  }
+
 }

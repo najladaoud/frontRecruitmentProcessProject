@@ -10,8 +10,10 @@ import {HttpClientModule} from "@angular/common/http";
 import { ListMeetingComponent } from './list-meeting/list-meeting.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { FeaturesComponent } from './features/features.component';
 import { UpdateMeetingComponent } from './update-meeting/update-meeting.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -21,8 +23,10 @@ import { UpdateMeetingComponent } from './update-meeting/update-meeting.componen
     ListMeetingComponent,
     HeaderComponent,
     HomeComponent,
-    FeaturesComponent,
     UpdateMeetingComponent,
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [

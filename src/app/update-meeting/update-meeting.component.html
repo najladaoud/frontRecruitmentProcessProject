@@ -1,1 +1,64 @@
-<p>update-meeting works!</p>
+<body id="test1">
+<div class="container" >
+  <div class="title">Modifier Rendez-vous</div>
+  <div class="col-sm-8 col-sm-offset-2">
+    <form (ngSubmit)="update()" #f="ngForm">
+      <div class="details">
+      <div class="from-group">
+        <label for="nomRecruteur">Nom du Recruteur *</label>
+        <input type="text" id="nomRecruteur" class="form-control" name="nomRecruteur" [(ngModel)]="meeting.nomRecruteur"  #nomRecruteur="ngModel" required >
+        <div class="alert alert-danger"  *ngIf="nomRecruteur.invalid && nomRecruteur.touched">
+          Ce champ est obligatoire
+        </div>
+      </div>
+        <div class="from-group">
+          <label for="npcandidat">nom et prenom du candidat *</label>
+          <input type="text" id="npcandidat" class="form-control" name="npcandidat" [(ngModel)]="meeting.npcandidat"  #npcandidat="ngModel" required >
+          <div class="alert alert-danger" *ngIf="npcandidat.invalid && npcandidat.touched">
+            Ce champ est obligatoire
+          </div>
+        </div>
+        <div class="from-group">
+          <label for="post">poste *</label>
+          <input type="text" id="post" class="form-control" name="post" [(ngModel)]="meeting.poste" required >
+
+        </div>
+
+        <div class="from-group">
+        <label for="recommandepar">Recommandé par</label>
+        <input type="text" id="recommandepar" class="form-control" name="recommandepar" [(ngModel)]="meeting.recommandepar"  >
+
+      </div>
+
+      <div class="from-group">
+        <label for="sourcepar">Sourcé par</label>
+        <input type="text" id="sourcepar" class="form-control" name="sourcepar" [(ngModel)]="meeting.sourcepar"    >
+      </div>
+      <div class="from-group">
+        <label for="cooptepar">Coopté par</label>
+        <input type="text" id="cooptepar" class="form-control" name="cooptepar" [(ngModel)]="meeting.cooptepar"   >
+      </div>
+      <div class="from-group">
+        <label for="dateDeLentretien">Date de l'entretien *</label>
+        <input type="date" id="dateDeLentretien" class="form-control" name="dateDeLentretien" [(ngModel)]="meeting.dateDeLentretien"  #dateDeLentretien="ngModel" required >
+        <div class="alert alert-danger"  *ngIf="dateDeLentretien.invalid && dateDeLentretien.touched">
+          Ce champ est obligatoire
+        </div>
+      </div>
+      <div class="from-group">
+        <label for="dateDeMiseAjour">Date de mise à jour</label>
+        <input type="date" id="dateDeMiseAjour" class="form-control" name="dateDeLentretien" [(ngModel)]="meeting.dateDeMiseAjour" #dateDeLentretien="ngModel"    >
+
+      </div>
+    <!--  <div class="from-group">
+        <label for="autrecompetences">Compétences</label>
+        <input type="text" id="autrecompetences" class="form-control" name="autrecompetences" [(ngModel)]="meeting.autrecompetences">
+      </div>-->
+
+      <button  class="btn btn-primary" type="submit" [disabled]="f.invalid">Confirmer</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+</body>

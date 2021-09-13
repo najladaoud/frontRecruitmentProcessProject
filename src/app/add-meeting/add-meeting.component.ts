@@ -20,6 +20,7 @@ export class AddMeetingComponent {
   addFormMeeting= new  FormGroup({
     nomRecruteur: new FormControl('', [Validators.required]),
     npcandidat: new FormControl('',[Validators.required]),
+    poste: new FormControl('',[Validators.required]),
     recommandepar: new FormControl(''),
     cooptepar: new FormControl(''),
     sourcepar: new FormControl(''),
@@ -41,10 +42,7 @@ export class AddMeetingComponent {
   onRetourclick(){
     this.router.navigate(['/listMeeting']);
   }
-  /*
-    reset(): void{
-      this.addForm.reset();
-    }*/
+
 
 
 }

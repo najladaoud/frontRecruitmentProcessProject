@@ -1,6 +1,7 @@
 #test1 {
   margin-top: 150px;
 }
+/*
 body{
   display:flex;
   height:100vh;
@@ -9,7 +10,7 @@ body{
   padding:10px;
   background:linear-gradient(90deg, #2C3E50, #1ABC9C);
 
-}
+}*/
 .container{
   max-width: 700px;
   width:100%;
@@ -39,8 +40,8 @@ body{
 
 form .details .form-group{
   margin:20px 0 12px 0 ;
-  width: calc(100% /2 -20px);
-  
+  width: calc(100% /2 - 20px);
+
 }
 .details .form-group .libelle{
   display:block;
@@ -65,8 +66,6 @@ form .details .form-group{
 
   }
 
- 
-
   @media(max-width:584px){
     .container{
       max-width: 100%;
@@ -79,5 +78,5 @@ form .details .form-group{
    max-height: 300px;
    overflow-y:scroll;
   }
-  
+
 }
